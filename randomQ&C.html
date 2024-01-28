@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            overflow-x: hidden;
+            overflow-y: hidden;
+            width: 100vw;
+            height: 100vh;
+            background-image: url(./pexels-pixabay-355508.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;           
+        }
+        h1{
+            text-align: center;
+        }
+        .c1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        #div{
+            height: 350px;
+            width: 500px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        button{
+            width: 300px;
+            height: 30px;
+        }
+        #id1{
+            font-style: italic;
+            text-align: center;
+        }
+        #id2{
+            text-align: end;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quatation of the day</h1>
+   <div class="c1">
+    <div id="div">
+        <h3 id="id1"></h3>
+        <p id="id2"></p>
+    </div>
+    <button onclick="Qu(Q) ; backgroundcolor()" >click</button>
+   </div>
+        <script>
+            Q=[]
+           class quote{
+            constructor (q,a){
+                this.Quatation=q
+                this.Author=a
+            }
+           }
+           let q=new quote ('To live is the rarest thing in the world. Most people exist, that is all.', '– Oscar Wilde')
+           let q1=new quote('That it will never come again is what makes life so sweet.','– Emily Dickinson')
+           let q2=new quote('It is never too late to be what you might have been.','– George Eliot')
+           let q3=new quote('To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.','– Ralph Waldo Emerson')
+           let q4=new quote('Pain is inevitable. Suffering is optional.','– Haruki Murakami')
+           let q5=new quote('All the worlds a stage, and all the men and women merely players.','– William Shakespeare')
+           let q6=new quote('Unable are the loved to die for love is immortality.',' – Emily Dickinson')
+           Q.push(q,q1,q2,q3,q4,q5,q6)
+
+          
+            var id1=document.getElementById('id1')
+            var id2=document.getElementById('id2')
+            var div=document.getElementById('div')
+
+            function Qu(Q){
+            random=[Math.floor(Math.random()*Q.length)]
+            id1.innerHTML=Q[random].Quatation
+            id2.innerHTML=Q[random].Author
+            }
+
+            function backgroundcolor(){
+                var n='0123456789ABCDEF'
+                var code='#'
+                for(i=0;i<6;i++){
+                randm=n[Math.floor(Math.random(i)*16)]
+                code +=randm
+                }
+               return div.style.background=code
+            }
+         
+    </script>
+</body>
+</html>
